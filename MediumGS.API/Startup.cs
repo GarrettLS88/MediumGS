@@ -21,7 +21,7 @@ namespace MediumGS.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<TestContext>(options =>
-                options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc();
 

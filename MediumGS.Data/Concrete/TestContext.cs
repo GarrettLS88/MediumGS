@@ -1,5 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+/// <summary>
+/// Migrations Tools -> NuGet Package Manager -> Package Manager Console
+/// Add-Migrations [Name]
+/// Update-Database
+/// Remove-Migration - Last migration
+/// </summary>
+
 namespace MediumGS.Data.Concrete
 {
     public class TestContext : DbContext

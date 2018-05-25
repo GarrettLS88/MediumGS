@@ -13,6 +13,7 @@ namespace MediumGS.Data.Abstract
         public Repository(TestContext context)
         {
             _context = context;
+            _entities = _context.Set<T>();
         }
 
         public T GetSingle(int id)

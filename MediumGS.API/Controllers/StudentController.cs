@@ -1,6 +1,7 @@
 ﻿using MediumGS.Data.Abstract;
 using MediumGS.Data.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 
 namespace MediumGS.API.Controllers
@@ -20,6 +21,14 @@ namespace MediumGS.API.Controllers
         [HttpGet]
         public IEnumerable<Student> GetAll()
         {
+            Student student = new Student()
+            {
+                EnrollmentDate = DateTime.Today,
+                FirstMidName = "Garrett Lee",
+                LastName = "Shipp"
+            };
+            _studentRepository.Insert(student);
+
             return _studentRepository.GetAll();
         }
 
