@@ -8,12 +8,13 @@ namespace MediumGS.Data.Abstract
     public class Repository<T> : IRepository<T> where T : Entity
     {
         protected readonly TestContext _context;
-        private DbSet<T> _entities { get; set; }
+        protected DbSet<T> _entities { get; set; }
 
+        // _context is disposed using .net core DI in Startup.cs
         public Repository(TestContext context)
         {
             _context = context;
-            _entities = _context.Set<T>();
+            _entities = context.Set<T>();
         }
 
         public T GetSingle(int id)
