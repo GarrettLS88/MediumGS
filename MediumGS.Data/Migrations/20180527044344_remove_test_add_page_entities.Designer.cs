@@ -11,9 +11,10 @@ using System;
 namespace MediumGS.Data.Migrations
 {
     [DbContext(typeof(TestContext))]
-    partial class TestContextModelSnapshot : ModelSnapshot
+    [Migration("20180527044344_remove_test_add_page_entities")]
+    partial class remove_test_add_page_entities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

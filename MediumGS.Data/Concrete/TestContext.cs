@@ -11,9 +11,9 @@ namespace MediumGS.Data.Concrete
 {
     public class TestContext : DbContext
     {
-        public DbSet<Course> Courses { get; set; }
-        public DbSet<Enrollment> Enrollments { get; set; }
-        public DbSet<Student> Students { get; set; }
+        public DbSet<PageContent> PageContents { get; set; }
+        public DbSet<Slot> Slots { get; set; }
+        public DbSet<Meta> Metas { get; set; }
 
         public TestContext(DbContextOptions<TestContext> options)
             : base(options)
@@ -22,9 +22,9 @@ namespace MediumGS.Data.Concrete
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Course>().ToTable("Course");
-            modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
-            modelBuilder.Entity<Student>().ToTable("Student");
+            modelBuilder.Entity<PageContent>().ToTable("PageContent");
+            modelBuilder.Entity<Slot>().ToTable("Slot");
+            modelBuilder.Entity<Meta>().ToTable("Meta");
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MediumGS.Data.Abstract
 {
-    public interface IStudentRepository : IRepository<Student>
+    public interface IPageContentRepository : IRepository<PageContent>
     {
     }
 }

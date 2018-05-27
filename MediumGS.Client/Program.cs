@@ -11,7 +11,8 @@ namespace MediumGS.Client
     {
         private static readonly HttpClient _client = new HttpClient();
         private static string _url = string.Empty;
-        private const string BASE_URL = "http://localhost:51687/api/v1/student";
+        private const string BASE_URL = "http://localhost:51687/api/v1/";
+        private static string _target = string.Empty;
 
         static void Main(string[] args)
         {
@@ -24,43 +25,43 @@ namespace MediumGS.Client
 
             while (true)
             {
+                Console.WriteLine("Tables: pagecontent");
+                Console.Write("Enter table: ");
+                _target = Console.ReadLine();
+
                 Console.WriteLine("Types: GET | POST | PUT | DELETE");
                 Console.Write("Enter request type: ");
                 cmd = Console.ReadLine();
+
+                _url = BASE_URL + _target;
 
                 switch (cmd.ToLower())
                 {
                     case "get":
                         Console.Write("Leave blank for all or enter /{id}: ");
                         cmd = Console.ReadLine();
-                        _url = BASE_URL + cmd;
+                        _url += cmd;
                         Console.WriteLine("JSON Response:");
                         Console.WriteLine(await Get());
-                        _url = string.Empty;
                         break;
                     case "post":
                         Console.Write("JSON: ");
                         cmd = Console.ReadLine();
-                        _url = BASE_URL;
                         Console.WriteLine("JSON Response:");
                         Console.WriteLine(await Create(cmd));
-                        _url = string.Empty;
                         break;
                     case "put":
                         Console.Write("JSON: ");
                         cmd = Console.ReadLine();
-                        _url = BASE_URL;
                         Console.WriteLine("Response Status:");
                         Console.WriteLine(await Update(cmd));
-                        _url = string.Empty;
                         break;
                     case "delete":
                         Console.Write("Enter /{id}: ");
                         cmd = Console.ReadLine();
-                        _url = BASE_URL + cmd;
+                        _url += cmd;
                         Console.WriteLine("Response Status:");
                         Console.WriteLine(await Delete());
-                        _url = string.Empty;
                         break;
                     default:
                         return;

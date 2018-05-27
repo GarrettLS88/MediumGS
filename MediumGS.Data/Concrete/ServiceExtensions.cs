@@ -16,8 +16,8 @@ namespace MediumGS.Data.Concrete
 
             // [Transient] lifetime services are created each time they are requested.
             //  This lifetime works best for lightweight, stateless services.
-
-            services.AddScoped<IStudentRepository, StudentRepository>();
+            
+            services.AddScoped<IPageContentRepository, PageContentRepository>();
 
             return services;
         }
