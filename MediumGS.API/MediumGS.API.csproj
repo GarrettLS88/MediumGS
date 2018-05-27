@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MediumGS.Data\MediumGS.Data.csproj" />
+    <ProjectReference Include="..\MediumGS.Service\MediumGS.Service.csproj" />
   </ItemGroup>
 
 </Project>

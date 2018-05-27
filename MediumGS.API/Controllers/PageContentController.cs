@@ -1,7 +1,7 @@
-﻿using MediumGS.Data.Abstract;
-using MediumGS.Data.Concrete;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using MediumGS.Service.Abstract;
+using MediumGS.Data.Concrete;
 
 namespace MediumGS.API.Controllers
 {
@@ -9,25 +9,25 @@ namespace MediumGS.API.Controllers
     [Route("api/v1/pagecontent")]
     public class PageContentController : Controller
     {
-        private readonly IPageContentRepository _pageContentRepository;
+        private readonly IPageContentService _pageContentService;
 
-        public PageContentController(IPageContentRepository pageContentRepository)
+        public PageContentController(IPageContentService pageContentRepository)
         {
-            _pageContentRepository = pageContentRepository;
+            _pageContentService = pageContentRepository;
         }
 
         // GET: api/v1/pagecontent
         [HttpGet]
         public IEnumerable<PageContent> GetAll()
         {
-            return _pageContentRepository.GetAll();
+            return _pageContentService.GetAllPages();
         }
 
         // GET: api/v1/pagecontent/{id}
         [HttpGet("{id}", Name = "GetSinglePageContent")]
         public IActionResult GetSingle(int id)
         {
-            PageContent page = _pageContentRepository.GetSingle(id);
+            PageContent page = _pageContentService.GetPage(id);
 
             if (page != null) return Ok(page);
 
@@ -40,7 +40,7 @@ namespace MediumGS.API.Controllers
         {
             if (page == null) return BadRequest();
 
-            _pageContentRepository.Insert(page);
+            _pageContentService.AddPage(page);
 
             return CreatedAtRoute("GetSinglePageContent", new { id = page.Id }, page);
         }
@@ -51,7 +51,7 @@ namespace MediumGS.API.Controllers
         {
             if (page == null || page.Id == 0) return BadRequest();
 
-            _pageContentRepository.Update(page);
+            _pageContentService.UpdatePage(page);
 
             return NoContent();
         }
@@ -60,7 +60,7 @@ namespace MediumGS.API.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            _pageContentRepository.Delete(id);
+            _pageContentService.DeletePage(id);
 
             return NoContent();
         }

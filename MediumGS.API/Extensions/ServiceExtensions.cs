@@ -1,7 +1,8 @@
-﻿using MediumGS.Data.Abstract;
+﻿using MediumGS.Service.Abstract;
+using MediumGS.Service.Concrete;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MediumGS.Data.Concrete
+namespace MediumGS.API.Extensions
 {
     public static class ServiceExtensions
     {
@@ -16,8 +17,8 @@ namespace MediumGS.Data.Concrete
 
             // [Transient] lifetime services are created each time they are requested.
             //  This lifetime works best for lightweight, stateless services.
-            
-            services.AddScoped<IPageContentRepository, PageContentRepository>();
+
+            services.AddScoped<IPageContentService, PageContentService>();
 
             return services;
         }

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using MediumGS.Data.Abstract;
 using System.Collections.Generic;
-using System.Text;
 
-namespace MediumGS.Data.Abstract
+namespace MediumGS.Repo.Abstract
 {
     public interface IRepository<T> where T : IEntity
     {

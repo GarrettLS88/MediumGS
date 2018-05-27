@@ -5,9 +5,13 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediumGS.API", "MediumGS.API\MediumGS.API.csproj", "{CFDB84AB-BC39-49BF-BEB2-4217DBDADC81}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediumGS.Data", "MediumGS.Data\MediumGS.Data.csproj", "{246D3AAD-C3EB-417D-8EC2-4E570E1FC49A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediumGS.Client", "MediumGS.Client\MediumGS.Client.csproj", "{F8A77DFD-B32D-4B44-8193-8969C4CE3FB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediumGS.Client", "MediumGS.Client\MediumGS.Client.csproj", "{F8A77DFD-B32D-4B44-8193-8969C4CE3FB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediumGS.Data", "MediumGS.Data\MediumGS.Data.csproj", "{374C627C-54E3-457F-8820-9A0B82DD951C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediumGS.Repo", "MediumGS.Repo\MediumGS.Repo.csproj", "{7D91D01E-560B-4DCE-81BA-F12EA1C6C066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediumGS.Service", "MediumGS.Service\MediumGS.Service.csproj", "{CCC043CD-0797-469F-9374-C03FE3E778D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +23,22 @@ Global
 		{CFDB84AB-BC39-49BF-BEB2-4217DBDADC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFDB84AB-BC39-49BF-BEB2-4217DBDADC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFDB84AB-BC39-49BF-BEB2-4217DBDADC81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{246D3AAD-C3EB-417D-8EC2-4E570E1FC49A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{246D3AAD-C3EB-417D-8EC2-4E570E1FC49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{246D3AAD-C3EB-417D-8EC2-4E570E1FC49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{246D3AAD-C3EB-417D-8EC2-4E570E1FC49A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8A77DFD-B32D-4B44-8193-8969C4CE3FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8A77DFD-B32D-4B44-8193-8969C4CE3FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8A77DFD-B32D-4B44-8193-8969C4CE3FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8A77DFD-B32D-4B44-8193-8969C4CE3FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374C627C-54E3-457F-8820-9A0B82DD951C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374C627C-54E3-457F-8820-9A0B82DD951C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374C627C-54E3-457F-8820-9A0B82DD951C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374C627C-54E3-457F-8820-9A0B82DD951C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D91D01E-560B-4DCE-81BA-F12EA1C6C066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D91D01E-560B-4DCE-81BA-F12EA1C6C066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D91D01E-560B-4DCE-81BA-F12EA1C6C066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D91D01E-560B-4DCE-81BA-F12EA1C6C066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCC043CD-0797-469F-9374-C03FE3E778D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC043CD-0797-469F-9374-C03FE3E778D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC043CD-0797-469F-9374-C03FE3E778D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC043CD-0797-469F-9374-C03FE3E778D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

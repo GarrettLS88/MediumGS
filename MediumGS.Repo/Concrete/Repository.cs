@@ -1,9 +1,10 @@
 ﻿using MediumGS.Data.Concrete;
+using MediumGS.Repo.Concrete;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MediumGS.Data.Abstract
+namespace MediumGS.Repo.Abstract
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {

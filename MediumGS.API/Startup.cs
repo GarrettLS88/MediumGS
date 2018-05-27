@@ -1,4 +1,5 @@
-﻿using MediumGS.Data.Concrete;
+﻿using MediumGS.API.Extensions;
+using MediumGS.Repo.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

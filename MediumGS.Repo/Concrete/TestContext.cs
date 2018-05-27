@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MediumGS.Data.Concrete;
+using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 /// Migrations Tools -> NuGet Package Manager -> Package Manager Console
@@ -7,7 +8,7 @@
 /// Remove-Migration - Last migration
 /// </summary>
 
-namespace MediumGS.Data.Concrete
+namespace MediumGS.Repo.Concrete
 {
     public class TestContext : DbContext
     {
