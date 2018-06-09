@@ -1,4 +1,5 @@
-﻿using MediumGS.API.Extensions;
+﻿using AutoMapper;
+using MediumGS.API.Extensions;
 using MediumGS.Repo.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,10 +21,9 @@ namespace MediumGS.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TestContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddAutoMapper();
 
-            services.RegisterServices();
+            services.RegisterServices(Configuration);
 
             services.AddMvc();
         }

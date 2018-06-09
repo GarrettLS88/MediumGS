@@ -1,12 +1,16 @@
-﻿using MediumGS.Service.Abstract;
+﻿using MediumGS.Repo.Abstract;
+using MediumGS.Repo.Concrete;
+using MediumGS.Service.Abstract;
 using MediumGS.Service.Concrete;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MediumGS.API.Extensions
 {
     public static class ServiceExtensions
     {
-        public static IServiceCollection RegisterServices(this IServiceCollection services)
+        public static IServiceCollection RegisterServices(this IServiceCollection services, IConfiguration configuration)
         {
             // [Singleton] which creates a single instance throughout the application. 
             //  It creates the instance for the first time and reuses the same object in the all calls.
@@ -18,6 +22,10 @@ namespace MediumGS.API.Extensions
             // [Transient] lifetime services are created each time they are requested.
             //  This lifetime works best for lightweight, stateless services.
 
+            services.AddDbContext<TestContext>(options =>
+                options.UseMySql(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("MediumGS.Repo")));
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IPageContentService, PageContentService>();
 
             return services;

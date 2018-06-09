@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 /// Migrations Tools -> NuGet Package Manager -> Package Manager Console
-/// Add-Migrations [Name]
-/// Update-Database
-/// Remove-Migration - Last migration
+/// add-migration [Name]
+/// update-database
+/// remove-migration - Last migration
 /// </summary>
 
 namespace MediumGS.Repo.Concrete
@@ -15,6 +15,7 @@ namespace MediumGS.Repo.Concrete
         public DbSet<PageContent> PageContents { get; set; }
         public DbSet<Slot> Slots { get; set; }
         public DbSet<Meta> Metas { get; set; }
+        public DbSet<Schema> Schemas { get; set; }
 
         public TestContext(DbContextOptions<TestContext> options)
             : base(options)
@@ -26,6 +27,7 @@ namespace MediumGS.Repo.Concrete
             modelBuilder.Entity<PageContent>().ToTable("PageContent");
             modelBuilder.Entity<Slot>().ToTable("Slot");
             modelBuilder.Entity<Meta>().ToTable("Meta");
+            modelBuilder.Entity<Schema>().ToTable("Schema");
         }
     }
 }

@@ -8,5 +8,6 @@ namespace MediumGS.Data.Concrete
 
         public ICollection<Slot> Slots { get; set; }
         public ICollection<Meta> Metas { get; set; }
+        public ICollection<Schema> Schemas { get; set; }
     }
 }

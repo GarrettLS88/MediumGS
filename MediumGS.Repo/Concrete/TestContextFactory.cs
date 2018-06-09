@@ -9,7 +9,7 @@ namespace MediumGS.Data.Concrete
         public TestContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<TestContext>();
-            optionsBuilder.UseMySql("Server=localhost;Port=3306;Database=mediumgs_test;Uid=root;Pwd='Narsh1pgh0st;';persistsecurityinfo=True;");
+            optionsBuilder.UseMySql("Server=localhost;Port=3306;Database=mediumgs;Uid=root;Pwd='Narsh1pgh0st;';persistsecurityinfo=True;");
 
             return new TestContext(optionsBuilder.Options);
         }
